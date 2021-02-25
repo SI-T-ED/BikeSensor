@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:pages="clr-namespace:BikeSensor.Views.Pages"
+            x:Class="BikeSensor.Views.TabPage"
+            x:Name="TabNavigation"
+            NavigationPage.HasNavigationBar="false"
+            UnselectedTabColor="{x:DynamicResource TextGreen}"
+            SelectedTabColor="{x:DynamicResource TextGreen}"
+            BarBackgroundColor="White"
+            BackgroundColor="White"
+            PagesChanged="TabbedPage_PagesChanged">
+    <TabbedPage.Children>
+        <pages:ActualityPage x:Name="ActualityContent" IconImageSource="ActualityIcone.png" />
+        <pages:MainPage x:Name="MainContent" IconImageSource="MenuIconeSelected.png" />
+        <pages:AdjustementPage x:Name="PreferenceContent" IconImageSource="PreferenceIcone.png" />
+    </TabbedPage.Children>
+
+</TabbedPage>

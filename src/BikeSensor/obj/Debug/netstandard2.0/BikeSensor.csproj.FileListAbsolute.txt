@@ -1,0 +1,13 @@
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/Views/ContentViews/AdjustementAdviceView.xaml.g.cs
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/Views/Pages/ActualityPage.xaml.g.cs
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/Views/Pages/AdjustementPage.xaml.g.cs
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/Views/Pages/LogInPage.xaml.g.cs
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/Views/Pages/MainPage.xaml.g.cs
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/Views/Pages/PreferencePage.xaml.g.cs
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/Views/Pages/RegisterPage.xaml.g.cs
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/Views/TabPage.xaml.g.cs
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/BikeSensor.AssemblyInfoInputs.cache
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/BikeSensor.AssemblyInfo.cs
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/BikeSensor.csproj.CoreCompileInputs.cache
+/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/Debug/netstandard2.0/BikeSensor.csprojAssemblyReference.cache
