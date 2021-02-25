@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeSensor.iOS", "BikeSenso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeSensor", "BikeSensor\BikeSensor.csproj", "{5154DDF7-41A8-44C5-A55B-3C1C03D67FDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeSensor.Android", "BikeSensoir.Android\BikeSensor.Android.csproj", "{3ACC0114-5C92-46A1-8BD1-728427CF9C1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeSensor.Android", "BikeSensor.Android\BikeSensor.Android.csproj", "{3ACC0114-5C92-46A1-8BD1-728427CF9C1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
