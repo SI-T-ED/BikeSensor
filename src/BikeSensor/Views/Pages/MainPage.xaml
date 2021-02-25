@@ -24,6 +24,7 @@
                            FontSize="24"
                            FontFamily="RobotoBold"
                            FontAttributes="Bold"
+
                            TextColor="{x:DynamicResource Key=TextGreen}"/>
 
                 </StackLayout>
