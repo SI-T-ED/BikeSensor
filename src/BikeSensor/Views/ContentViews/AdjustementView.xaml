@@ -7,10 +7,39 @@
                CornerRadius="20"
                HasShadow="False"
                VerticalOptions="FillAndExpand"
-               HorizontalOptions="CenterAndExpand"
-                 WidthRequest="320"
-                 HeightRequest="575">
+               HorizontalOptions="Center"
+            WidthRequest="320"
+               Margin="28,30">
+              <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="20*"></RowDefinition>
+                  </Grid.RowDefinitions>
+                  <StackLayout Spacing="0"
+                               Orientation="Horizontal"
+                               Grid.Row="0">
+                        <Label Text="Recommandation"
+                           FontSize="15"
+                           FontFamily="RobotoRegular"
+                           TextColor="{x:DynamicResource Key=TextGreen}"/>
+                        <Label Text="Lun. 15 Fev."
+                            FontSize="15"
+                            FontFamily="RobotoRegular"
+                            TextColor="{x:DynamicResource Key=TextGreen}"
+                               HorizontalOptions="EndAndExpand"/>
 
+                  </StackLayout>
+                  <StackLayout Spacing="0"
+                               Grid.Row="1">
+                      <Label Text="Revisser à l’emplacement indiqué."
+                           FontSize="24"
+                           FontFamily="RobotoBold"
+                           FontAttributes="Bold"
+
+                           TextColor="{x:DynamicResource Key=TextGreen}"/>
+                  </StackLayout>  
+              </Grid>
         </Frame>
     </ContentView.Content>
 </ContentView>

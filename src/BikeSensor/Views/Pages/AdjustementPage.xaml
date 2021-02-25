@@ -35,7 +35,7 @@
             <ScrollView Orientation="Horizontal"
                             VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand"
-                            Background="red">
+                            >
                 <content:AdjustementView/>
 
              </ScrollView>

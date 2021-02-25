@@ -7,7 +7,7 @@
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="190"/>
                 <RowDefinition Height="200"/>
-                <RowDefinition Height="205"/>
+                <RowDefinition Height="225"/>
 
 
             </Grid.RowDefinitions>
@@ -111,11 +111,12 @@
                            FontFamily="RobotoBold"
                            TextColor="{x:DynamicResource Key=TextGreen}"/>
                         <Button Text="Voir les détails"
-                                Margin="0,20,0,0"
+                                HeightRequest="40"
                                 CornerRadius="18"
                                 BackgroundColor="{x:DynamicResource MainGreen}"
                                 TextColor="{x:DynamicResource White}"
                                 FontFamily="RobotoBold"
+                                VerticalOptions="CenterAndExpand"
                                 FontSize="18"/>
                     </StackLayout>
 
