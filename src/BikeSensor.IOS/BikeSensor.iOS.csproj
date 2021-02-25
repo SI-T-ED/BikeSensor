@@ -141,7 +141,9 @@
     <BundleResource Include="Resources\MenuIconeSelected.png" />
     <BundleResource Include="Resources\MenuIconeSelected%402x.png" />
     <BundleResource Include="Resources\MenuIconeSelected%403x.png" />
-    <BundleResource Include="Resources\ActualityIcone.png" />
+    <BundleResource Include="Resources\ActualityIcone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
     <BundleResource Include="Resources\ActualityIcone%402x.png" />
     <BundleResource Include="Resources\ActualityIcone%403x.png" />
     <BundleResource Include="Resources\PreferenceIcone.png" />
@@ -154,7 +156,6 @@
     <BundleResource Include="Resources\ActualityIconeSelected%402x.png" />
     <BundleResource Include="Resources\ActualityIconeSelected%403x.png" />
     <BundleResource Include="Resources\Disclosure.png" />
-    <BundleResource Include="Resources\Disclosure%403x.png" />
     <BundleResource Include="Resources\Disclosure%402x.png" />
   </ItemGroup>
 </Project>

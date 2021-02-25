@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2wtPiC9AR/MkCTyC/AFENg2kYY1xVsBRLE3/eo54NpV60eUWwIsvikNlwTQEgCfr9ixwsl3RpMVowSGXnUtLcQ==",
+  "dgSpecHash": "ZQyhP8ltJq5e8VwAfJzdSKEyO6BLeego0B7UYF6u3rhPZzk1tGZeuCOQdnwSWehlvWCqKFGISIYKQFwZVepZRQ==",
   "success": true,
-  "projectFilePath": "/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/BikeSensor.csproj",
+  "projectFilePath": "/Users/dimitritimoz/Documents/Developpement/BikeSensor/src/BikeSensor/BikeSensor.csproj",
   "expectedPackageFiles": [
     "/Users/dimitritimoz/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/dimitritimoz/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",

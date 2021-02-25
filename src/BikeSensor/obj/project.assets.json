@@ -539,11 +539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/BikeSensor.csproj",
+      "projectUniqueName": "/Users/dimitritimoz/Documents/Developpement/BikeSensor/src/BikeSensor/BikeSensor.csproj",
       "projectName": "BikeSensor",
-      "projectPath": "/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/BikeSensor.csproj",
+      "projectPath": "/Users/dimitritimoz/Documents/Developpement/BikeSensor/src/BikeSensor/BikeSensor.csproj",
       "packagesPath": "/Users/dimitritimoz/.nuget/packages/",
-      "outputPath": "/Users/dimitritimoz/Documents/Developpement/SI/App/BikeSensor/src/BikeSensor/BikeSensor/obj/",
+      "outputPath": "/Users/dimitritimoz/Documents/Developpement/BikeSensor/src/BikeSensor/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/dimitritimoz/.config/NuGet/NuGet.Config"

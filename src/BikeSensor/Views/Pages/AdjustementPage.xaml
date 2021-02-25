@@ -36,7 +36,7 @@
                             VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand"
                             Background="red">
-                <content:AdjustementAdviceView/>
+                <content:AdjustementView/>
 
              </ScrollView>
         </StackLayout>

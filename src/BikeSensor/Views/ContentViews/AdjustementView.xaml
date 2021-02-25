@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BikeSensor.Views.ContentViews.AdjustementView">
+    <ContentView.Content>
+          <Frame BorderColor="{x:DynamicResource MainGreen}"
+               CornerRadius="20"
+               HasShadow="False"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="CenterAndExpand"
+                 WidthRequest="320"
+                 HeightRequest="575">
+
+        </Frame>
+    </ContentView.Content>
+</ContentView>

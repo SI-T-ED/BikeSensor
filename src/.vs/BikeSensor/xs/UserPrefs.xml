@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{D613CDE4-8D8C-4387-950C-2E534E2EC80E}|Default">
+  <MonoDevelop.Ide.ItemProperties.BikeSensor.iOS TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4D83262-CC55-491E-BCEF-FC44A51A4362" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BikeSensor/Views/Pages/MainPage.xaml">
+    <Files>
+      <File FileName="BikeSensor/Views/ContentViews/AdjustementView.xaml" Line="6" Column="34" />
+      <File FileName="BikeSensor/Views/ContentViews/AdjustementView.xaml.cs" Line="8" Column="6" />
+      <File FileName="BikeSensor/Views/Pages/AdjustementPage.xaml" Line="45" Column="1" />
+      <File FileName="BikeSensor/Views/Pages/MainPage.xaml" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BikeSensor" expanded="True">
+            <Node name="BikeSensor" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="Pages" expanded="True">
+                  <Node name="MainPage.xaml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="BikeSensor.Android" expanded="True" />
+            <Node name="BikeSensor.iOS" expanded="True">
+              <Node name="Resources" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
