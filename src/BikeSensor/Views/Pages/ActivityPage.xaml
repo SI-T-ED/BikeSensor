@@ -24,6 +24,7 @@
             </Grid.RowDefinitions>
             <StackLayout Spacing="0"
                          Grid.Row="0"
+                         Orientation="Horizontal">
                
                 <ImageButton x:Name="BackBtn"
                              Grid.Column="1"
