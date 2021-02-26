@@ -5,6 +5,7 @@
              x:Class="BikeSensor.Views.Pages.ActivityPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
+        <ScrollView>
         <Grid ColumnSpacing="0"
               RowSpacing="0"
               Margin="0,45,0,0">
@@ -15,11 +16,11 @@
                 </OnPlatform>
             </Grid.Margin>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="90"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="210"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <StackLayout Spacing="0"
@@ -30,6 +31,7 @@
                              Grid.Column="1"
                              HeightRequest="70"
                              WidthRequest="30"
+                             Margin="10,0,0,0"
                              Rotation="180"
                              HorizontalOptions="Start"
                              VerticalOptions="CenterAndExpand"
@@ -41,7 +43,7 @@
                        FontFamily="RobotoBold"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand"
-                       Margin="-30,0,0,0"
+                       Margin="-40,0,0,0"
                        TextColor="{x:DynamicResource Key=TextGreen}"/>
             </StackLayout>
             <StackLayout Spacing="0"
@@ -98,7 +100,105 @@
                            TextColor="{x:DynamicResource Key=TextGreen}"/>
 
                 </StackLayout>
+             
             </StackLayout>
+            <StackLayout Spacing="0"
+                            Orientation="Vertical"
+                            HorizontalOptions="FillAndExpand"
+                        Grid.Row="4"
+                        Margin="30,0,30,0">
+                    <Label Text="Réglages"
+                            FontSize="24"
+                            FontFamily="RobotoBold"
+                            TextColor="{x:DynamicResource Key=TextGreen}"/>
+                    <Label FontSize="20"
+                            Text="Ces indications correspondent à ce relevé."
+                            FontFamily="RobotoRegular"
+                            TextColor="{x:DynamicResource Key=TextGreen}"/>
+                        
+            </StackLayout>
+            <StackLayout Spacing="20"
+                         Orientation="Vertical"
+                         HorizontalOptions="FillAndExpand"
+                         Grid.Row="5"
+                         Margin="30,0,30,0">
+                <StackLayout Spacing="0"
+                             Orientation="Horizontal">
+                    <BoxView CornerRadius="19"
+                             BackgroundColor="#00D53D"
+                             HeightRequest="28"
+                             WidthRequest="28"
+                             VerticalOptions="Center"/>
+                    <StackLayout Spacing="0"
+                                 Orientation="Vertical"
+                                 Margin="7,0,0,0">
+                        <Label Text="Précontraintes"
+                            FontSize="15"
+                            FontFamily="RobotoBold"
+                            TextColor="{x:DynamicResource Key=TextGreen}"/>
+                        <Label FontSize="15"
+                                Text="Exellent"
+                                FontFamily="RobotoRegular"
+                                TextColor="#00D53D"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Spacing="0"
+                             Orientation="Horizontal">
+                    <BoxView CornerRadius="19"
+                             BackgroundColor="#FFB50F"
+                             HeightRequest="28"
+                             WidthRequest="28"
+                             VerticalOptions="Center"/>
+                    <StackLayout Spacing="0"
+                                 Orientation="Vertical"
+                                 Margin="7,0,0,0">
+                        <Label Text="Compression"
+                            FontSize="15"
+                            FontFamily="RobotoBold"
+                            TextColor="{x:DynamicResource Key=TextGreen}"/>
+                        <Label FontSize="15"
+                                Text="Faible"
+                                FontFamily="RobotoRegular"
+                                TextColor="#FFB50F"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Spacing="0"
+                             Orientation="Horizontal">
+                    <BoxView CornerRadius="19"
+                             BackgroundColor="#D51000"
+                             HeightRequest="28"
+                             WidthRequest="28"
+                             VerticalOptions="Center"/>
+                    <StackLayout Spacing="0"
+                                 Orientation="Vertical"
+                                 Margin="7,0,0,0">
+                        <Label Text="Détenter"
+                            FontSize="15"
+                            FontFamily="RobotoBold"
+                            TextColor="{x:DynamicResource Key=TextGreen}"/>
+                        <Label FontSize="15"
+                                Text="Trop faible"
+                                FontFamily="RobotoRegular"
+                                TextColor="#D51000"/>
+                    </StackLayout>
+                </StackLayout>
+                    
+                        
+            </StackLayout>
+            
+            <Button Text="Voir les détails"
+                    Grid.Row="6"
+                    WidthRequest="290"
+                    HeightRequest="40"
+                    CornerRadius="18"
+                    HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="{x:DynamicResource MainGreen}"
+                    TextColor="{x:DynamicResource White}"
+                    FontFamily="RobotoBold"
+                    VerticalOptions="CenterAndExpand"
+                    FontSize="18"/>
+          
         </Grid>
+    </ScrollView>
     </ContentPage.Content>
 </ContentPage>
