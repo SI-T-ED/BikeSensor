@@ -27,5 +27,9 @@ namespace BikeSensor
         protected override void OnResume()
         {
         }
+
+        void BackButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
     }
 }

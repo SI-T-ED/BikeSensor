@@ -1,39 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:content="clr-namespace:BikeSensor.Views.ContentViews"
              x:Class="BikeSensor.Views.Pages.ActualityPage">
     <ContentPage.Content>
         <StackLayout Spacing="0"> 
-            <StackLayout Spacing="0"
-                     Margin="28,41,0,0"
-                     Orientation="Horizontal"
-                     HeightRequest="90"
-                     VerticalOptions="Start">
-                <StackLayout Spacing="0"
-                             HorizontalOptions="StartAndExpand"
-                             VerticalOptions="Center">
-                    <Label Text="Liste d'activité"
-                           FontSize="26"
-                           FontFamily="RobotoBold"
-                           FontAttributes="Bold"
-                           VerticalOptions="CenterAndExpand"
-                           TextColor="{x:DynamicResource Key=TextGreen}"/>
-
-                </StackLayout>
-                <StackLayout Spacing="0"
-                             HorizontalOptions="End"
-                             VerticalOptions="CenterAndExpand"
-                             Margin="0,0,28,0">
-                    <Image Source="Settings.png"
-                           HeightRequest="35"
-                           WidthRequest="35"/>
-                </StackLayout>
-            </StackLayout>
+            <content:CustomNavigationBar TitleText="Liste d'activité"/>
             <StackLayout Spacing="0">
                 <Label FontSize="14"
                        Text="Vos activités sont rangées de la plus récente à la plus ancienne."
                        FontFamily="RobotoRegular"
-                       
                        WidthRequest="280"
                        Margin="28,0,28,24"
                        TextColor="{x:DynamicResource Key=TextGreen}"/>
@@ -41,7 +17,10 @@
                       BackgroundColor="#CECECE"
                       HeightRequest="0.5"
                       WidthRequest="200"/>
-                <ListView RowHeight="70" SeparatorColor="#CECECE" SelectionMode="None" RefreshControlColor="Transparent">
+                <ListView RowHeight="70"
+                          SeparatorColor="#CECECE"
+                          SelectionMode="None"
+                          RefreshControlColor="Transparent">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -51,9 +30,9 @@
                                     <ColumnDefinition Width="*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
                                 <StackLayout Spacing="0"
-                                             Grid.Column="0"
-                                             VerticalOptions="Center"
-                                             Margin="28,0,28,0">
+                                            Grid.Column="0"
+                                            VerticalOptions="Center"
+                                            Margin="28,0,28,0">
                                     <Label Text="Aujourd’hui, à 12h30"
                                         FontSize="14"
                                         FontFamily="RobotoBold"
@@ -68,11 +47,11 @@
                                         TextColor="{x:DynamicResource Key=TextGreen}"/>
                                 </StackLayout>
                                 <Image Grid.Column="1"
-                                            HeightRequest="45"
-                                            WidthRequest="10"
-                                            HorizontalOptions="Center"
-                                            VerticalOptions="Center"
-                                            Source="Disclosure.png"/>
+                                    HeightRequest="45"
+                                    WidthRequest="10"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Source="Disclosure.png"/>
                             </Grid>
                                
                             </ViewCell>

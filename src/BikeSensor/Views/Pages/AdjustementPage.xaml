@@ -2,40 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:content="clr-namespace:BikeSensor.Views.ContentViews"
-             
+             ControlTemplate="{x:DynamicResource MainPageTemplate}"
              x:Class="BikeSensor.Views.Pages.AdjustementPage">
     <ContentPage.Content>
         <StackLayout Spacing="0"> 
-            <StackLayout Spacing="0"
-                     Margin="28,41,0,0"
-                     Orientation="Horizontal"
-                     HeightRequest="90"
-                     VerticalOptions="Start">
-                <StackLayout Spacing="0"
-                             HorizontalOptions="StartAndExpand"
-                             VerticalOptions="Center">
-                    <Label Text="Réglages"
-                           FontSize="26"
-                           FontFamily="RobotoBold"
-                           FontAttributes="Bold"
-                           VerticalOptions="CenterAndExpand"
-                           TextColor="{x:DynamicResource Key=TextGreen}"/>
-
-                </StackLayout>
-                <StackLayout Spacing="0"
-                             HorizontalOptions="End"
-                             VerticalOptions="CenterAndExpand"
-                             Margin="0,0,28,0">
-                    <Image Source="Settings.png"
-                           HeightRequest="35"
-                           WidthRequest="35"/>
-                </StackLayout>
-                
-            </StackLayout>
+            <content:CustomNavigationBar TitleText="Réglages"/>
             <ScrollView Orientation="Horizontal"
-                            VerticalOptions="FillAndExpand"
-                            HorizontalOptions="FillAndExpand"
-                            >
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand">
                 <content:AdjustementView/>
 
              </ScrollView>

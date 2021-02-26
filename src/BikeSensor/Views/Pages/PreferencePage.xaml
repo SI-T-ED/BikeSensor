@@ -1,4 +1,12 @@
-﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BikeSensor.Views.Pages.PreferencePage">
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:content="clr-namespace:BikeSensor.Views.ContentViews"
+             x:Class="BikeSensor.Views.Pages.PreferencePage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
+        <StackLayout Spacing="0"
+                     HorizontalOptions="FillAndExpand">
+            <content:CustomNavigationBar TitleText="Paramètres"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

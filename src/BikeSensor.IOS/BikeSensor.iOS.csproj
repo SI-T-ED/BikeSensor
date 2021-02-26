@@ -157,5 +157,8 @@
     <BundleResource Include="Resources\ActualityIconeSelected%403x.png" />
     <BundleResource Include="Resources\Disclosure.png" />
     <BundleResource Include="Resources\Disclosure%402x.png" />
+    <BundleResource Include="Resources\close%403x.png" />
+    <BundleResource Include="Resources\close%402x.png" />
+    <BundleResource Include="Resources\close.png" />
   </ItemGroup>
 </Project>
