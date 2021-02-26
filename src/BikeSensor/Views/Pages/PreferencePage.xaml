@@ -5,8 +5,83 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Spacing="0"
-                     HorizontalOptions="FillAndExpand">
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
             <content:CustomNavigationBar TitleText="Paramètres"/>
+            <StackLayout Orientation="Horizontal"
+                         Spacing="0"
+                         HeightRequest="50"
+                         HorizontalOptions="FillAndExpand"
+                         Margin="0,5">
+                <Image Source="smartphone.png"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="Start"
+                       Margin="30,0,5,0"
+                       HeightRequest="50"
+                       WidthRequest="32"/>
+                 <Label Text="Application"
+                        FontSize="28"
+                        FontFamily="RobotoBold"
+                        TextColor="{x:DynamicResource Key=TextGreen}"
+                        VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+             <Line HorizontalOptions="FillAndExpand"
+                      BackgroundColor="#CECECE"
+                      HeightRequest="0.5"
+                      WidthRequest="200"/>
+            <Grid HeightRequest="60">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Spacing="0"
+                            Grid.Column="0"
+                            VerticalOptions="Center"
+                            Margin="28,0,28,0">
+                    <Label Text="Langue"
+                        FontSize="20"
+                        FontFamily="RobotoBold"
+                        TextColor="{x:DynamicResource Key=TextGreen}"/>
+                    <Label Text="Français"
+                        FontSize="18"
+                        FontFamily="RobotoRegular"
+                        TextColor="{x:DynamicResource Key=TextGreen}"/>
+                    
+                </StackLayout>
+                <Image Grid.Column="1"
+                    HeightRequest="50"
+                    WidthRequest="15"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="Disclosure.png"/>
+            </Grid>
+            <Line HorizontalOptions="FillAndExpand"
+                      BackgroundColor="#CECECE"
+                      HeightRequest="0.5"
+                      WidthRequest="200"/>
+            <Line HorizontalOptions="FillAndExpand"
+                  VerticalOptions="EndAndExpand"
+                      BackgroundColor="#CECECE"
+                      HeightRequest="0.5"
+                      WidthRequest="200"/>
+            <Button x:Name="DisconnectBtn"
+                    Text="Se déconnecter"
+                    TextColor="Red"
+                    FontSize="18"
+                    FontFamily="RobotoRegular"
+                    HorizontalOptions="Start"
+                    Margin="30,0,0,0"/>
+             <Line HorizontalOptions="FillAndExpand"
+                   VerticalOptions="End"
+                   BackgroundColor="#CECECE"
+                   HeightRequest="0.5"
+                   WidthRequest="200"
+                   Margin="0,0,0,10"/>
+            <Label Text="V1.0"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,25"
+                   TextColor="{x:DynamicResource TextGreen}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

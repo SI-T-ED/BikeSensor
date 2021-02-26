@@ -160,5 +160,11 @@
     <BundleResource Include="Resources\close%403x.png" />
     <BundleResource Include="Resources\close%402x.png" />
     <BundleResource Include="Resources\close.png" />
+    <BundleResource Include="Resources\wifi.png" />
+    <BundleResource Include="Resources\wifi%403x.png" />
+    <BundleResource Include="Resources\smartphone.png" />
+    <BundleResource Include="Resources\wifi%402x.png" />
+    <BundleResource Include="Resources\smartphone%402x.png" />
+    <BundleResource Include="Resources\smartphone%403x.png" />
   </ItemGroup>
 </Project>
