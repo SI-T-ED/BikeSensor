@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:content="clr-namespace:BikeSensor.Views.ContentViews"
+             x:Class="BikeSensor.Views.Pages.ActivityPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0"
+              RowSpacing="0"
+              Margin="0,45,0,0">
+            <Grid.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="0,45,0,0"/>
+                    <On Platform="Android" Value="0,5,0,0"/>
+                </OnPlatform>
+            </Grid.Margin>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackLayout Spacing="0"
+                         Grid.Row="0"
+               
+                <ImageButton x:Name="BackBtn"
+                             Grid.Column="1"
+                             HeightRequest="70"
+                             WidthRequest="30"
+                             Rotation="180"
+                             HorizontalOptions="Start"
+                             VerticalOptions="CenterAndExpand"
+                             Clicked="BackBtn_Clicked"
+                             Source="Disclosure.png"
+                             BackgroundColor="Transparent"/>
+                <Label Text="Aujourd'hui, 12h30"
+                       FontSize="22"
+                       FontFamily="RobotoBold"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Margin="-30,0,0,0"
+                       TextColor="{x:DynamicResource Key=TextGreen}"/>
+            </StackLayout>
+            <StackLayout Spacing="0"
+                         Grid.Row="1"
+                         VerticalOptions="Center">
+                <Label Text="00:20:05"
+                       FontSize="46"
+                       FontFamily="RobotoBold"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Center"
+                       TextColor="{x:DynamicResource Key=TextGreen}"/>
+                <Label Text="Durée"
+                       FontSize="16"
+                       FontFamily="RobotoRegular"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       TextColor="{x:DynamicResource Key=TextGreen}"/>
+            </StackLayout>
+            <StackLayout Spacing="0"
+                         Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand"
+                         Grid.Row="2">
+                <StackLayout Spacing="0"
+                             HorizontalOptions="FillAndExpand"
+                             Orientation="Vertical">
+                    <Label Text="70%"
+                           FontSize="22"
+                           FontFamily="RobotoBold"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="Center"
+                           TextColor="{x:DynamicResource Key=TextGreen}"/>
+                    <Label Text="Intensité moy."
+                           FontSize="15"
+                           FontFamily="RobotoBold"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="Center"
+                           TextColor="{x:DynamicResource Key=TextGreen}"/>
+
+                </StackLayout>
+                <StackLayout Spacing="0"
+                             HorizontalOptions="FillAndExpand"
+                             Orientation="Vertical">
+                    <Label Text="100%"
+                           FontSize="22"
+                           FontFamily="RobotoBold"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="Center"
+                           TextColor="{x:DynamicResource Key=TextGreen}"/>
+                    <Label Text="Intensité max."
+                           FontSize="15"
+                           FontFamily="RobotoBold"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="Center"
+                           TextColor="{x:DynamicResource Key=TextGreen}"/>
+
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

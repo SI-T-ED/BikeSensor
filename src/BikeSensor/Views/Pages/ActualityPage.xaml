@@ -17,10 +17,12 @@
                       BackgroundColor="#CECECE"
                       HeightRequest="0.5"
                       WidthRequest="200"/>
-                <ListView RowHeight="70"
+                <ListView x:Name="ListView"
+                          RowHeight="70"
                           SeparatorColor="#CECECE"
-                          SelectionMode="None"
-                          RefreshControlColor="Transparent">
+                          RefreshControlColor="Transparent"
+                          SelectedItem="None"
+                          ItemSelected="ListView_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

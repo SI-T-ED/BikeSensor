@@ -3,10 +3,16 @@
              x:Class="BikeSensor.Views.ContentViews.CustomNavigationBar">
     <ContentView.Content>
         <StackLayout Spacing="0"
-                    Margin="28,40,0,0"
                     Orientation="Horizontal"
                     HeightRequest="90"
                     VerticalOptions="Start">
+            <StackLayout.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="28,40,0,0" />
+                    <On Platform="Android" Value="28,0,0,0" />
+
+                </OnPlatform>
+            </StackLayout.Margin>
             <StackLayout Spacing="0"
                             HorizontalOptions="StartAndExpand"
                             VerticalOptions="Center">
@@ -26,6 +32,7 @@
                             Source="Settings.png"
                              HeightRequest="35"
                              WidthRequest="35"
+                             BackgroundColor="Transparent"
                              Clicked="ImageButton_Clicked"/>
             </StackLayout>
                 
