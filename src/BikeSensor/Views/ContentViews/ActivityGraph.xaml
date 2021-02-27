@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="BikeSensor.Views.ContentViews.RecordGraph">
+    <ContentView.Content>
+        <StackLayout Spacing="0"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+            <Label Text="Vue d'ensemble"
+                   FontSize="21"
+                   FontFamily="RobotoBold"
+                   TextColor="{x:DynamicResource Key=WhiteText}"/>
+            <Label FontSize="14"
+                   Text="De vos activités cette semaine."
+                   FontFamily="RobotoRegular"
+                   TextColor="{x:DynamicResource Key=WhiteText}"/>
+            <microcharts:ChartView x:Name="chartView"
+                                   Margin="0,10,0,0"
+                                   VerticalOptions="FillAndExpand"
+                                   BackgroundColor="{x:DynamicResource Key=MainGreen}"
+                                   Background="{x:DynamicResource Key=MainGreen}"/>
+        </StackLayout>
+        
+
+    </ContentView.Content>
+</ContentView>

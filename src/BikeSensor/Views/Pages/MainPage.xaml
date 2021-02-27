@@ -1,15 +1,14 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:content="clr-namespace:BikeSensor.Views.ContentViews"
              x:Class="BikeSensor.Views.Pages.MainPage">
     <ContentPage.Content>
         <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
-                <RowDefinition Height="190"/>
+                <RowDefinition Height="210"/>
                 <RowDefinition Height="200"/>
                 <RowDefinition Height="225"/>
-
-
             </Grid.RowDefinitions>
             <StackLayout Spacing="0"
                          Grid.Row="0"
@@ -24,7 +23,6 @@
                            FontSize="24"
                            FontFamily="RobotoBold"
                            FontAttributes="Bold"
-
                            TextColor="{x:DynamicResource Key=TextGreen}"/>
 
                 </StackLayout>
@@ -45,8 +43,9 @@
                    CornerRadius="20"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   HasShadow="False">
-                
+                   HasShadow="False"
+                   Padding="15,10">
+                <content:ActivityGraph/>
             </Frame>
             <StackLayout Grid.Row="2"
                          Spacing="0"
@@ -72,6 +71,7 @@
                       VerticalOptions="Center"
                       HorizontalOptions="Center"
                       BackgroundColor="red">
+                     <content:RecordGraphView/>
 
                 </Grid>
             </StackLayout>

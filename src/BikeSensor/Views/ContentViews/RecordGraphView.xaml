@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BikeSensor.Views.ContentViews.RecordGraphView"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms">
+    <ContentView.Content>
+         <microcharts:ChartView x:Name="charLine"
+                                Margin="0,10,0,0"
+                                VerticalOptions="FillAndExpand"
+                                BackgroundColor="{x:DynamicResource Key=MainGreen}"
+                                Background="{x:DynamicResource Key=MainGreen}"/>
+    </ContentView.Content>
+</ContentView>
