@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microcharts;
-using Microcharts.Forms;
 using SkiaSharp;
 using Xamarin.Forms;
 
 namespace BikeSensor.Views.ContentViews
 {
-    public partial class ActivityGraph : ContentView
+    public partial class ActivityGraphView : ContentView
     {
-        public ActivityGraph()
+        public ActivityGraphView()
         {
             InitializeComponent();
 
@@ -74,12 +73,9 @@ namespace BikeSensor.Views.ContentViews
 
             };
             //var chartView = new ChartView();
-            chartView.Chart = new BarChart() { Entries = entries, IsAnimated = true, LabelTextSize = 40, LabelOrientation = Orientation.Horizontal, PointSize = 5, ValueLabelOrientation = Orientation.Horizontal, MaxValue = 100, MinValue=0};
+            chartView.Chart = new BarChart() { Entries = entries, IsAnimated = true, LabelTextSize = 40, LabelOrientation = Orientation.Horizontal, PointSize = 5, ValueLabelOrientation = Orientation.Horizontal, MaxValue = 100, MinValue = 0 };
             chartView.Chart.BackgroundColor = SKColor.Parse("#3DAE5E");
             chartView.Chart.LabelColor = SKColor.Parse("#8ACF9E");
-        
-
-
         }
     }
 }

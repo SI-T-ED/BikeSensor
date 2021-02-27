@@ -8,7 +8,7 @@
             UnselectedTabColor="{x:DynamicResource TextGreen}"
             SelectedTabColor="{x:DynamicResource TextGreen}"
             BarBackgroundColor="White"
-            BackgroundColor="White"
+            BackgroundColor="White"     
             PagesChanged="TabbedPage_PagesChanged"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
@@ -16,9 +16,11 @@
             android:TabbedPage.IsSmoothScrollEnabled="True">
     
     <TabbedPage.Children>
-        <pages:ActualityPage x:Name="ActualityContent" IconImageSource="ActualityIcone.png" />
-        <pages:MainPage x:Name="MainContent" IconImageSource="MenuIconeSelected.png" />
-        <pages:AdjustementPage x:Name="PreferenceContent" IconImageSource="PreferenceIcone.png" />
+        <pages:ActualityPage x:Name="ActualityContent"
+                             IconImageSource="ActualityIcone.png" />
+        <pages:MainPage x:Name="MainContent"
+                        IconImageSource="MenuIconeSelected.png" />
+        <pages:AdjustementPage x:Name="PreferenceContent"
+                               IconImageSource="wireless.png"/>
     </TabbedPage.Children>
-
 </TabbedPage>

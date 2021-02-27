@@ -17,7 +17,7 @@ namespace BikeSensor.Views.ContentViews
                 new ChartEntry(0)
                 {
                     Color = SKColor.Parse("#CBE9D4"),
-                    Label = "V",
+                    Label = "0",
                     ValueLabel = "0%",
                     TextColor = SKColor.Parse("#8ACF9E"),
                     ValueLabelColor = SKColor.Parse("#8ACF9E")
@@ -25,7 +25,7 @@ namespace BikeSensor.Views.ContentViews
                 new ChartEntry(0)
                 {
                     Color = SKColor.Parse("#CBE9D4"),
-                    Label = "S",
+                    Label = "5",
                     ValueLabel = "0%",
                     TextColor = SKColor.Parse("#8ACF9E"),
                     ValueLabelColor = SKColor.Parse("#8ACF9E")
@@ -33,7 +33,7 @@ namespace BikeSensor.Views.ContentViews
                 new ChartEntry(0)
                 {
                     Color = SKColor.Parse("#CBE9D4"),
-                    Label = "D",
+                    Label = "10",
                     ValueLabel = "0%",
                     TextColor = SKColor.Parse("#8ACF9E"),
                     ValueLabelColor = SKColor.Parse("#8ACF9E")
@@ -41,7 +41,7 @@ namespace BikeSensor.Views.ContentViews
                 new ChartEntry(10)
                 {
                     Color = SKColor.Parse("#CBE9D4"),
-                    Label = "L",
+                    Label = "15",
                     ValueLabel = "10%",
                     TextColor = SKColor.Parse("#8ACF9E"),
                     ValueLabelColor = SKColor.Parse("#8ACF9E")
@@ -49,7 +49,7 @@ namespace BikeSensor.Views.ContentViews
                  new ChartEntry(4)
                 {
                     Color = SKColor.Parse("#CBE9D4"),
-                    Label = "M",
+                    Label = "20",
                     ValueLabel = "4%",
                     TextColor = SKColor.Parse("#8ACF9E"),
                     ValueLabelColor = SKColor.Parse("#8ACF9E")
@@ -57,7 +57,7 @@ namespace BikeSensor.Views.ContentViews
                   new ChartEntry(12)
                 {
                     Color = SKColor.Parse("#CBE9D4"),
-                    Label = "M",
+                    Label = "25",
                     ValueLabel = "12%",
                     TextColor = SKColor.Parse("#8ACF9E"),
                     ValueLabelColor = SKColor.Parse("#8ACF9E")
@@ -65,7 +65,7 @@ namespace BikeSensor.Views.ContentViews
                    new ChartEntry(9)
                 {
                     Color = SKColor.Parse("#CBE9D4"),
-                    Label = "J",
+                    Label = "30",
                     ValueLabel = "9%",
                     TextColor = SKColor.Parse("#8ACF9E"),
                     ValueLabelColor = SKColor.Parse("#8ACF9E")
@@ -75,7 +75,11 @@ namespace BikeSensor.Views.ContentViews
 
             charLine.Chart = new LineChart()
             {
-                Entries = entries
+                Entries = entries,
+                LabelOrientation = Orientation.Horizontal,
+                ValueLabelOrientation = Orientation.Horizontal,
+                LabelTextSize = 36,
+                
             };
         }
     }

@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
-             x:Class="BikeSensor.Views.ContentViews.RecordGraph">
+             x:Class="BikeSensor.Views.ContentViews.ActivityGraphView">
     <ContentView.Content>
         <StackLayout Spacing="0"
                      HorizontalOptions="FillAndExpand"
@@ -21,7 +21,5 @@
                                    BackgroundColor="{x:DynamicResource Key=MainGreen}"
                                    Background="{x:DynamicResource Key=MainGreen}"/>
         </StackLayout>
-        
-
     </ContentView.Content>
 </ContentView>

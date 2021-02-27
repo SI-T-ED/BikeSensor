@@ -9,7 +9,7 @@
             <StackLayout.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="iOS" Value="28,40,0,0" />
-                    <On Platform="Android" Value="28,0,0,0" />
+                    <On Platform="Android" Value="28,-5,0,0" />
 
                 </OnPlatform>
             </StackLayout.Margin>

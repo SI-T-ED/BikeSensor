@@ -7,19 +7,18 @@
     <ContentPage.Content>
         <ScrollView>
         <Grid ColumnSpacing="0"
-              RowSpacing="0"
-              Margin="0,45,0,0">
+              RowSpacing="0">
             <Grid.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
-                    <On Platform="iOS" Value="0,45,0,0"/>
-                    <On Platform="Android" Value="0,5,0,0"/>
+                    <On Platform="iOS" Value="0,0,0,0"/>
+                    <On Platform="Android" Value="0,-5,0,0"/>
                 </OnPlatform>
             </Grid.Margin>
             <Grid.RowDefinitions>
                 <RowDefinition Height="90"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition Height="210"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
@@ -102,11 +101,15 @@
                 </StackLayout>
              
             </StackLayout>
+            <content:RecordGraphView HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="FillAndExpand"
+                                     Grid.Row="3"
+                                     Margin="30,5"/>
             <StackLayout Spacing="0"
-                            Orientation="Vertical"
-                            HorizontalOptions="FillAndExpand"
-                        Grid.Row="4"
-                        Margin="30,0,30,0">
+                         Orientation="Vertical"
+                         HorizontalOptions="FillAndExpand"
+                         Grid.Row="4"
+                         Margin="30,0,30,0">
                     <Label Text="Réglages"
                             FontSize="24"
                             FontFamily="RobotoBold"
