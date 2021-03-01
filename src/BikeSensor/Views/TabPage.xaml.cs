@@ -10,12 +10,13 @@ namespace BikeSensor.Views
 
         public TabPage()
         {
+            Navigation.PopToRootAsync();
             InitializeComponent();
             this.CurrentPage = this.Children[1];
             this.CurrentPageChanged += (object sender, EventArgs e) => {
                 ActualityContent.IconImageSource = "ActualityIcone.png";
                 MainContent.IconImageSource = "MenuIcone.png";
-                PreferenceContent.IconImageSource = "wireless.png";
+                SuspensionManageContent.IconImageSource = "wireless.png";
 
                 var i = this.Children.IndexOf(this.CurrentPage);
                 if (i == 0)

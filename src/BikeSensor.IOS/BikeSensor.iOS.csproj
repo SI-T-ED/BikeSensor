@@ -160,5 +160,17 @@
     <BundleResource Include="Resources\logo%403x.png" />
     <BundleResource Include="Resources\logo.png" />
     <BundleResource Include="Resources\logo%402x.png" />
+    <BundleResource Include="Resources\BatteryIndicator.png" />
+    <BundleResource Include="Resources\SuspensionSelected%402x.png" />
+    <BundleResource Include="Resources\wifiIndicator%402x.png" />
+    <BundleResource Include="Resources\wifiIndicator%403x.png" />
+    <BundleResource Include="Resources\SuspensionSelected%403x.png" />
+    <BundleResource Include="Resources\BatteryIndicator%403x.png" />
+    <BundleResource Include="Resources\SuspensionNoSelected%403x.png" />
+    <BundleResource Include="Resources\SuspensionNoSelected%402x.png" />
+    <BundleResource Include="Resources\SuspensionNoSelected.png" />
+    <BundleResource Include="Resources\SuspensionSelected.png" />
+    <BundleResource Include="Resources\BatteryIndicator%402x.png" />
+    <BundleResource Include="Resources\wifiIndicator.png" />
   </ItemGroup>
 </Project>

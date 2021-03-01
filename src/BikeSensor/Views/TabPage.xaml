@@ -20,7 +20,7 @@
                              IconImageSource="ActualityIcone.png" />
         <pages:MainPage x:Name="MainContent"
                         IconImageSource="MenuIconeSelected.png" />
-        <pages:AdjustementPage x:Name="PreferenceContent"
+        <pages:SuspensionManagePage x:Name="SuspensionManageContent"
                                IconImageSource="wireless.png"/>
     </TabbedPage.Children>
 </TabbedPage>

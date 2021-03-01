@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:content="clr-namespace:BikeSensor.Views.ContentViews"
+             x:Class="BikeSensor.Views.Pages.SuspensionManagePage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <content:CustomNavigationBar TitleText="Votre suspension"
+                                         HorizontalOptions="FillAndExpand"/>
+            <Image x:Name="SuspensionImage"
+                   Source="SuspensionNoSelected.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+            <StackLayout x:Name="DisconectedLayout"
+                         Spacing="0"
+                         IsVisible="False">
+                <Button Text="Ajouter une suspension"
+                        x:Name="AddSuspensionBtn"
+                        HeightRequest="50"
+                        CornerRadius="18"
+                        BackgroundColor="{x:DynamicResource MainGreen}"
+                        TextColor="{x:DynamicResource White}"
+                        FontFamily="RobotoBold"
+                        Margin="32,45"
+                        Clicked="AddSuspensionBtn_Clicked"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="EndAndExpand"
+                        FontSize="18"/>
+            </StackLayout>
+            <StackLayout x:Name="ConnectedLayout"
+                         Spacing="15"
+                         Margin="0,0,0,50">
+                <StackLayout Orientation="Horizontal"
+                             Margin="30,0,30,0">
+                    <Frame Padding="5"
+                           VerticalOptions="Center"
+                           WidthRequest="36"
+                           HeightRequest="36"
+                           BackgroundColor="{x:DynamicResource MainGreen}"
+                           CornerRadius="5">
+                        <Image Source="wifiIndicator.png"/>
+                    </Frame>
+                    <Label Text="Êtat connecté"
+                           FontSize="20"
+                           FontFamily="RobotoBold"
+                           TextColor="{x:DynamicResource TextGreen}"
+                           VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             Margin="30,0,30,0">
+                    <Frame Padding="5"
+                           WidthRequest="36"
+                           HeightRequest="36"
+                           VerticalOptions="Center"
+                           BackgroundColor="{x:DynamicResource MainGreen}"
+                           CornerRadius="5">
+                        <Image Source="BatteryIndicator.png"/>
+                    </Frame>
+                    <Label Text="Batterie: 90%"
+                           FontSize="20"
+                           FontFamily="RobotoBold"
+                           TextColor="{x:DynamicResource TextGreen}"
+                           VerticalOptions="Center"/>
+                </StackLayout>
+                
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
