@@ -11,5 +11,15 @@ namespace BikeSensor.Views.Pages
         {
             InitializeComponent();
         }
+
+        void RegisterBtn_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new TabPage());
+        }
+
+        void LoginPageBtn_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new LogInPage());
+        }
     }
 }

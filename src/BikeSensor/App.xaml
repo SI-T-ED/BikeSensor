@@ -6,8 +6,10 @@
         <ResourceDictionary>
             <Color x:Key="MainGreen">#3DAE5E</Color>
             <Color x:Key="White">#FFFFFF</Color>
-            <Color x:Key="TextGreen">#3DAE5E</Color>
+            <Color x:Key="TextGreen">#055B1E</Color>
             <Color x:Key="WhiteText">#CBE9D4</Color>
+            <Color x:Key="DarkGray">#3C3D3D</Color>
+            <Color x:Key="LightGray">#A9ACAC</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

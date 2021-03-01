@@ -20,6 +20,7 @@
                                    VerticalOptions="FillAndExpand"
                                    BackgroundColor="{x:DynamicResource Key=MainGreen}"
                                    Background="{x:DynamicResource Key=MainGreen}"/>
+           
         </StackLayout>
     </ContentView.Content>
 </ContentView>

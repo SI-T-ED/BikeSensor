@@ -4,7 +4,7 @@
             xmlns:pages="clr-namespace:BikeSensor.Views.Pages"
             x:Class="BikeSensor.Views.TabPage"
             x:Name="TabNavigation"
-            NavigationPage.HasNavigationBar="false"
+            NavigationPage.HasNavigationBar="False"
             UnselectedTabColor="{x:DynamicResource TextGreen}"
             SelectedTabColor="{x:DynamicResource TextGreen}"
             BarBackgroundColor="White"

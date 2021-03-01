@@ -11,8 +11,7 @@ namespace BikeSensor
         public App()
         {
             InitializeComponent();
-            
-            MainPage = new NavigationPage(new TabPage());
+            MainPage = new NavigationPage(new RegisterPage());
             
         }
 

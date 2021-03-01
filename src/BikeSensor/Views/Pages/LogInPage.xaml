@@ -1,5 +1,106 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BikeSensor.Views.Pages.LogInPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BikeSensor.Views.Pages.LogInPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
+        <StackLayout Spacing="0"
+                     Margin="35.5,0,35.5,0">
+            
+            <Image WidthRequest="160"
+                    HeightRequest="160"
+                    Source="logo.png"
+                    HorizontalOptions="CenterAndExpand">
+                <Image.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="0,70,0,20"/>
+                        <On Platform="Android" Value="0,35,0,20"/>
+                    </OnPlatform>
+                </Image.Margin>
+            </Image>
+
+            <Label Text="Connexion"
+                   FontSize="32"
+                   FontFamily="RobotoBold"
+                   Margin="0,0,0,85"
+                   HorizontalOptions="Center"
+                   TextColor="{x:DynamicResource MainGreen}"/>
+
+            <Label Text="Email"
+                   TextColor="{x:DynamicResource DarkGray}"
+                   FontSize="16"
+                   FontFamily="RobotoRegular">
+                <Label.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="3,0,0,5"/>
+                        <On Platform="Android" Value="3,0,0,-5"/>
+                    </OnPlatform>
+                </Label.Margin>
+            </Label>
+            <Entry Placeholder="monemail@email.com"
+                   HeightRequest="40"
+                   ReturnType="Next"
+                   Keyboard="Email"
+                   PlaceholderColor="{x:DynamicResource LightGray}"
+                   TextColor="{x:DynamicResource DarkGray}"
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <Label Text="Mot de passe"
+                   TextColor="{x:DynamicResource DarkGray}"
+                   FontSize="16"
+                   FontFamily="RobotoRegular">
+                <Label.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="3,35,0,5"/>
+                        <On Platform="Android" Value="3,35,0,-5"/>
+                    </OnPlatform>
+                </Label.Margin>
+            </Label>
+            <Entry Placeholder="*************"
+                   HeightRequest="40"
+                   IsPassword="True"
+                   ReturnType="Next"
+                   Keyboard="Text"
+                   PlaceholderColor="{x:DynamicResource LightGray}"
+                   TextColor="{x:DynamicResource DarkGray}"
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="FillAndExpand"/>
+
+
+
+             <Button Text="Se connecter"
+                     x:Name="LoginBtn"
+                     Clicked="LoginBtn_Clicked"
+                     Margin="0,50,0,12"
+                     HeightRequest="50"
+                     CornerRadius="18"
+                     BackgroundColor="{x:DynamicResource MainGreen}"
+                     TextColor="{x:DynamicResource White}"
+                     FontFamily="RobotoBold"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="EndAndExpand"
+                     FontSize="18"/>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Spacing="0"
+                         VerticalOptions="End"
+                         Margin="0,0,0,20">
+            <Label Text="Vous n'avez pas de compte ?"
+                    FontFamily="RobotoBold"
+                    FontSize="14"
+                    TextColor="{x:DynamicResource LightGray}"/>
+            <Button Text="Inscrivez-vous"
+                    x:Name="RegisterBtn"
+                    Clicked="RegisterBtn_Clicked"
+                    FontFamily="RobotoBold"
+                    FontSize="14"
+                    Margin="4,0,0,0"
+                    HeightRequest="20"
+                    Padding="0"
+                    TextColor="{x:DynamicResource TextGreen}"
+                    BackgroundColor="Transparent"/>
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
