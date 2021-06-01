@@ -15,6 +15,8 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Microcharts" Version="0.9.5.9" />
     <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
+    <PackageReference Include="Plugin.BLE" Version="2.1.2" />
+    <PackageReference Include="MvvmCross.Plugin.BLE" Version="2.1.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -22,6 +24,7 @@
     <Folder Include="Ressources\" />
     <Folder Include="Ressources\Fonts\" />
     <Folder Include="Views\ContentViews\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Ressources\Fonts\Roboto-Bold.ttf" />
@@ -34,5 +37,10 @@
     <EmbeddedResource Include="Ressources\Fonts\Roboto-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\11.2.2.1\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v10.0\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
