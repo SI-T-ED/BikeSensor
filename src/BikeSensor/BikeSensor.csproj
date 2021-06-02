@@ -25,6 +25,7 @@
     <Folder Include="Ressources\Fonts\" />
     <Folder Include="Views\ContentViews\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Ressources\Fonts\Roboto-Bold.ttf" />
