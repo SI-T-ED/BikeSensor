@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using BikeSensor.API;
 using Xamarin.Forms;
 
 namespace BikeSensor.Views.Pages
@@ -11,7 +11,12 @@ namespace BikeSensor.Views.Pages
         public SuspensionManagePage()
         {
             InitializeComponent();
-            if (isConnected)
+           
+        }
+
+        protected override void OnAppearing()
+        {
+            if (BluetoothManager.IsConnected())
             {
                 ConnectedLayout.IsVisible = true;
                 DisconectedLayout.IsVisible = false;

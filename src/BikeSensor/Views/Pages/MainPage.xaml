@@ -13,7 +13,7 @@
                 </Grid.RowDefinitions>
                 <StackLayout Spacing="0"
                              Grid.Row="0"
-                             Margin="28,41,0,0"
+                             Margin="28,0,0,0"
                              Orientation="Horizontal" >
                     <StackLayout Spacing="0" HorizontalOptions="StartAndExpand">
                         <Label Text="Bonjour"
@@ -85,7 +85,7 @@
                            Text="Calculé par rapport à votre dernière activité"
                            FontFamily="RobotoRegular"
                            TextColor="{x:DynamicResource Key=TextGreen}"/>
-                    <Frame HasShadow="False"
+                    <!--Frame HasShadow="False"
                            CornerRadius="20"
                            HeightRequest="180"
                            WidthRequest="320"
@@ -118,7 +118,20 @@
                                     FontSize="18"/>
                         </StackLayout>
 
-                    </Frame>
+                    </-->
+                    <Button  x:Name="TriggerBtn"
+                             Text="Démarrer"
+                             HeightRequest="42"
+                             CornerRadius="18"
+                             BackgroundColor="{x:DynamicResource MainGreen}"
+                             TextColor="{x:DynamicResource White}"
+                             FontFamily="RobotoBold"
+                             VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand"
+                             WidthRequest="250"
+                             FontSize="18"
+                             Clicked="TriggerBtn_Clicked"
+                             />
                 </StackLayout>
             </Grid>
         </ScrollView>

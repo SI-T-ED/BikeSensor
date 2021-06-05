@@ -21,8 +21,10 @@
                           RowHeight="70"
                           SeparatorColor="#CECECE"
                           RefreshControlColor="Transparent"
-                          SelectedItem="None"
-                          ItemSelected="ListView_ItemSelected">
+                          ItemTapped="ListView_ItemTapped"
+                          Refreshing="ListView_Refreshing"
+                          SelectionMode="Single"
+                          IsPullToRefreshEnabled="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -35,15 +37,15 @@
                                             Grid.Column="0"
                                             VerticalOptions="Center"
                                             Margin="28,0,28,0">
-                                    <Label Text="Aujourd’hui, à 12h30"
+                                    <Label Text="{Binding Date}"
                                         FontSize="14"
                                         FontFamily="RobotoBold"
                                         TextColor="{x:DynamicResource Key=TextGreen}"/>
-                                    <Label Text="Durée : 20 min"
+                                    <Label Text="{Binding Duration}"
                                         FontSize="14"
                                         FontFamily="RobotoRegular"
                                         TextColor="{x:DynamicResource Key=TextGreen}"/>
-                                    <Label Text="Intensité moyenne : 70%"
+                                    <Label Text="{Binding MaxMeanText}"
                                         FontSize="14"
                                         FontFamily="RobotoRegular"
                                         TextColor="{x:DynamicResource Key=TextGreen}"/>

@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using BikeSensor.Interfaces;
+using System.Linq;
+using System.Text;
+using BikeSensor.API;
+using BikeSensor.Classes;
 using BikeSensor.Views;
 using BikeSensor.Views.Pages;
-using Plugin.BLE;
-using Plugin.BLE.Abstractions.Contracts;
+
+using Plugin.BluetoothClassic.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,49 +16,36 @@ namespace BikeSensor
 {
     public partial class App : Application
     {
+
         bool connected = false;
         public App()
         {
             InitializeComponent();
+
             MainPage = new NavigationPage(new TabPage());
             if(!connected)
             {
-                MainPage.Navigation.PushAsync(new RegisterPage());
+                MainPage.Navigation.PushAsync(new TabPage());
             }
         }
 
         protected override void OnStart()
         {
-            BluetoothCommunication();
+            Persistence.LoadRecords();
+            BluetoothManager.Init();
+
         }
 
-        protected override void OnSleep()
-        {
-        }
+ 
 
         protected override void OnResume()
         {
         }
 
-        void BackButton_Clicked(System.Object sender, System.EventArgs e)
-        {
-        }
+      
 
-        void BluetoothCommunication()
-        {
-            try
-            {
-                // At startup, I load all paired devices
-                DependencyService.Get<IBth>().Start("BikeSensor", 10, true);
-                Debug.WriteLine("test");
-            }
-            catch (Exception ex)
-            {
-                Application.Current.MainPage.DisplayAlert("Attention", ex.Message, "Ok");
-            }
+      
 
-
-
-        }
+       
     }
 }

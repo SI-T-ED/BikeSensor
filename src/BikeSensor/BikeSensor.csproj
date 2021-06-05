@@ -15,8 +15,8 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Microcharts" Version="0.9.5.9" />
     <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
-    <PackageReference Include="Plugin.BLE" Version="2.1.2" />
-    <PackageReference Include="MvvmCross.Plugin.BLE" Version="2.1.2" />
+    <PackageReference Include="Plugin.BluetoothClassic" Version="1.1.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -26,6 +26,8 @@
     <Folder Include="Views\ContentViews\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Model\" />
+    <Folder Include="API\" />
+    <Folder Include="Classes\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Ressources\Fonts\Roboto-Bold.ttf" />

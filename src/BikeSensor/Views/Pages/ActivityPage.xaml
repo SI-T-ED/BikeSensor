@@ -100,11 +100,17 @@
 
                 </StackLayout>
              
-            </StackLayout>
-            <content:RecordGraphView HorizontalOptions="FillAndExpand"
-                                     VerticalOptions="FillAndExpand"
-                                     Grid.Row="3"
-                                     Margin="30,5"/>
+            </StackLayout >
+            <ScrollView Orientation="Horizontal"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Grid.Row="3"
+                        Margin="30,5">
+                 <content:RecordGraphView x:Name="GraphContent"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand"/>
+            </ScrollView>
+           
             <StackLayout Spacing="0"
                          Orientation="Vertical"
                          HorizontalOptions="FillAndExpand"

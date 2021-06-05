@@ -1,10 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace BikeSensor
 {
     public class RecordModel
     {
-        public RecordModel()
-        {
-        }
+        public int Id { get; set; }
+
+        public String PartitionToken {get; set;}
+        
+        public DateTime Date { get; set; }
+
+        public string Duration { get; set; }
+
+        public int MaxIntensityMean { get; set; }
+
+
+        public List<DataModel> Datas = new List<DataModel>();
+
+        public bool Success { get; set; }
     }
 }

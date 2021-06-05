@@ -3,75 +3,43 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Microcharts;
 using SkiaSharp;
+using BikeSensor.Classes;
 
 namespace BikeSensor.Views.ContentViews
 {
     public partial class RecordGraphView : ContentView
     {
+        public RecordModel RecordModel { get; set; }
         public RecordGraphView()
         {
+            RecordModel = new RecordModel();
             InitializeComponent();
+          
+        }
 
-            var entries = new List<ChartEntry>()
+        public void LoadGraph()
+        {
+            var entries = new List<ChartEntry>();
+
+            foreach (var item in RecordModel.Datas)
             {
-                new ChartEntry(0)
+                entries.Add(new ChartEntry(item.Max)
                 {
+                   // ValueLabel = item.Max.ToString(),
                     Color = SKColor.Parse("#CBE9D4"),
-                    Label = "0",
-                    ValueLabel = "0%",
                     TextColor = SKColor.Parse("#8ACF9E"),
                     ValueLabelColor = SKColor.Parse("#8ACF9E")
-                },
-                new ChartEntry(0)
+                });
+                entries.Add(new ChartEntry(item.Min)
                 {
                     Color = SKColor.Parse("#CBE9D4"),
-                    Label = "5",
-                    ValueLabel = "0%",
                     TextColor = SKColor.Parse("#8ACF9E"),
-                    ValueLabelColor = SKColor.Parse("#8ACF9E")
-                },
-                new ChartEntry(0)
-                {
-                    Color = SKColor.Parse("#CBE9D4"),
-                    Label = "10",
-                    ValueLabel = "0%",
-                    TextColor = SKColor.Parse("#8ACF9E"),
-                    ValueLabelColor = SKColor.Parse("#8ACF9E")
-                },
-                new ChartEntry(10)
-                {
-                    Color = SKColor.Parse("#CBE9D4"),
-                    Label = "15",
-                    ValueLabel = "10%",
-                    TextColor = SKColor.Parse("#8ACF9E"),
-                    ValueLabelColor = SKColor.Parse("#8ACF9E")
-                },
-                 new ChartEntry(4)
-                {
-                    Color = SKColor.Parse("#CBE9D4"),
-                    Label = "20",
-                    ValueLabel = "4%",
-                    TextColor = SKColor.Parse("#8ACF9E"),
-                    ValueLabelColor = SKColor.Parse("#8ACF9E")
-                },
-                  new ChartEntry(12)
-                {
-                    Color = SKColor.Parse("#CBE9D4"),
-                    Label = "25",
-                    ValueLabel = "12%",
-                    TextColor = SKColor.Parse("#8ACF9E"),
-                    ValueLabelColor = SKColor.Parse("#8ACF9E")
-                },
-                   new ChartEntry(9)
-                {
-                    Color = SKColor.Parse("#CBE9D4"),
-                    Label = "30",
-                    ValueLabel = "9%",
-                    TextColor = SKColor.Parse("#8ACF9E"),
-                    ValueLabelColor = SKColor.Parse("#8ACF9E")
-                }
+                    ValueLabelColor = SKColor.Parse("#8ACF9E"),
+                    Label = item.Min.ToString(),
 
-            };
+                });
+            }
+
 
             charLine.Chart = new LineChart()
             {
@@ -79,8 +47,11 @@ namespace BikeSensor.Views.ContentViews
                 LabelOrientation = Orientation.Horizontal,
                 ValueLabelOrientation = Orientation.Horizontal,
                 LabelTextSize = 36,
-                
+                LineMode = LineMode.Spline
+
             };
+
+            charLine.WidthRequest = 50 * RecordModel.Datas.Count;
         }
     }
 }
