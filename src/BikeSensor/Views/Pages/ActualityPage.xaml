@@ -41,7 +41,7 @@
                                         FontSize="14"
                                         FontFamily="RobotoBold"
                                         TextColor="{x:DynamicResource Key=TextGreen}"/>
-                                    <Label Text="{Binding Duration}"
+                                    <Label Text="{Binding DurationMessage}"
                                         FontSize="14"
                                         FontFamily="RobotoRegular"
                                         TextColor="{x:DynamicResource Key=TextGreen}"/>
@@ -62,19 +62,6 @@
                       
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                    <ListView.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>mono</x:String>
-                            <x:String>monodroid</x:String>
-                            <x:String>monotouch</x:String>
-                            <x:String>monorail</x:String>
-                            <x:String>monodevelop</x:String>
-                            <x:String>monotone</x:String>
-                            <x:String>monopoly</x:String>
-                            <x:String>monomodal</x:String>
-                            <x:String>mononucleosis</x:String>
-                          </x:Array>
-                    </ListView.ItemsSource>
                 </ListView>
             </StackLayout>
         </StackLayout>

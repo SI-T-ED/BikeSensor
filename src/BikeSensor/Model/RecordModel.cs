@@ -11,7 +11,7 @@ namespace BikeSensor
         
         public DateTime Date { get; set; }
 
-        public string Duration { get; set; }
+        public TimeSpan Duration { get; set; }
 
         public int MaxIntensityMean { get; set; }
 

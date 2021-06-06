@@ -4,12 +4,12 @@
              x:Class="BikeSensor.Views.Pages.MainPage">
     <ContentPage.Content>
         <ScrollView>
-            <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,0,0,0">
+            <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,20,0,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="210"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="220"/>
                     <RowDefinition Height="300"/>
-                    <RowDefinition Height="225"/>
                 </Grid.RowDefinitions>
                 <StackLayout Spacing="0"
                              Grid.Row="0"
@@ -27,16 +27,9 @@
                                TextColor="{x:DynamicResource Key=TextGreen}"/>
 
                     </StackLayout>
-                    <StackLayout Spacing="0"
-                                 HorizontalOptions="End"
-                                 VerticalOptions="CenterAndExpand"
-                                 Margin="0,0,28,0">
-                        <Image Source="Settings.png"
-                               HeightRequest="35"
-                               WidthRequest="35"/>
-                    </StackLayout>
+                    
                 </StackLayout>
-                <Frame Grid.Row="1"
+                <!--Frame Grid.Row="1"
                        Margin="0,20,0,0"
                        BackgroundColor="{x:DynamicResource Key=MainGreen}"
                        WidthRequest="320"
@@ -47,8 +40,8 @@
                        HasShadow="False"
                        Padding="15,10">
                     <content:ActivityGraphView/>
-                </Frame>
-                <StackLayout Grid.Row="2"
+                </Frame-->
+                <StackLayout Grid.Row="3"
                              Spacing="0"
                              Margin="30,35,30,30">
 
@@ -73,16 +66,15 @@
                                              VerticalOptions="FillAndExpand"/>
 
                 </StackLayout>
-                <StackLayout Grid.Row="3"
+                <StackLayout Grid.Row="2"
                              Spacing="0"
-                             Margin="30,0,30,0"
-                             >
-                    <Label Text="Les réglages recommandées"
+                             Margin="30,30,30,0">
+                    <Label Text="Démarrer un enregistrement"
                                FontSize="20"
                                FontFamily="RobotoBold"
                                TextColor="{x:DynamicResource Key=TextGreen}"/>
                     <Label FontSize="16"
-                           Text="Calculé par rapport à votre dernière activité"
+                           Text="Pour démarrer appuyez sur le bouton ci-dessous."
                            FontFamily="RobotoRegular"
                            TextColor="{x:DynamicResource Key=TextGreen}"/>
                     <!--Frame HasShadow="False"
@@ -119,6 +111,23 @@
                         </StackLayout>
 
                     </-->
+                    <Label x:Name="DurationLb"
+                           Text="00:00:00"
+                           FontSize="46"
+                           FontFamily="RobotoBold"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="Center"
+                           IsVisible="False"
+                           TextColor="{x:DynamicResource Key=TextGreen}"/>
+                    <ActivityIndicator x:Name="ActivityIndicatorBtn"
+                                       Color="{x:DynamicResource MainGreen}"
+                                       IsEnabled="True"
+                                       IsRunning="True"
+                                       IsVisible="False"
+                                       HeightRequest="42"
+                                       VerticalOptions="CenterAndExpand"
+                                       HorizontalOptions="CenterAndExpand"
+                                       WidthRequest="250"/>
                     <Button  x:Name="TriggerBtn"
                              Text="Démarrer"
                              HeightRequest="42"

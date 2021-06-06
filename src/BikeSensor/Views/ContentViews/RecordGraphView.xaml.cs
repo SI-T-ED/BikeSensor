@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Microcharts;
 using SkiaSharp;
 using BikeSensor.Classes;
+using System.Threading.Tasks;
 
 namespace BikeSensor.Views.ContentViews
 {
@@ -14,44 +15,53 @@ namespace BikeSensor.Views.ContentViews
         {
             RecordModel = new RecordModel();
             InitializeComponent();
-          
+            charLine.Chart = new LineChart()
+            {
+                Entries = new List<ChartEntry>(),
+                LabelOrientation = Orientation.Horizontal,
+                ValueLabelOrientation = Orientation.Horizontal,
+                LabelColor = SKColor.Parse("000000"),
+                LabelTextSize = 36,
+                IsAnimated = false,
+                AnimationDuration = TimeSpan.Zero,
+                AnimationProgress = 1.0f,
+                LineMode = LineMode.Spline
+
+            };
+            LoadGraph();
         }
 
-        public void LoadGraph()
+        public Task<bool> LoadGraph(int from = 0, int to = 100)
         {
+            to = (to > RecordModel.Datas.Count - 1) ? RecordModel.Datas.Count - 1 : to;
             var entries = new List<ChartEntry>();
-
-            foreach (var item in RecordModel.Datas)
+            for (int i = from; i <= to; i++)
             {
-                entries.Add(new ChartEntry(item.Max)
+                entries.Add(new ChartEntry(RecordModel.Datas[i].Max)
                 {
-                   // ValueLabel = item.Max.ToString(),
+                    Label = i.ToString(),
                     Color = SKColor.Parse("#CBE9D4"),
                     TextColor = SKColor.Parse("#8ACF9E"),
-                    ValueLabelColor = SKColor.Parse("#8ACF9E")
+                    //ValueLabelColor = SKColor.Parse("#8ACF9E")
                 });
-                entries.Add(new ChartEntry(item.Min)
+                entries.Add(new ChartEntry(RecordModel.Datas[i].Min)
                 {
                     Color = SKColor.Parse("#CBE9D4"),
                     TextColor = SKColor.Parse("#8ACF9E"),
                     ValueLabelColor = SKColor.Parse("#8ACF9E"),
-                    Label = item.Min.ToString(),
+                    Label = RecordModel.Datas[i].Min.ToString(),
 
                 });
             }
 
 
-            charLine.Chart = new LineChart()
-            {
-                Entries = entries,
-                LabelOrientation = Orientation.Horizontal,
-                ValueLabelOrientation = Orientation.Horizontal,
-                LabelTextSize = 36,
-                LineMode = LineMode.Spline
 
-            };
+            charLine.Chart.Entries = entries;
+            
 
-            charLine.WidthRequest = 50 * RecordModel.Datas.Count;
+            charLine.WidthRequest = 50 * (to- from);
+
+            return Task.FromResult(true);
         }
     }
 }

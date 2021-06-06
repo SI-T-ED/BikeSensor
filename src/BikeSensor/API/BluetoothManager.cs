@@ -17,7 +17,7 @@ namespace BikeSensor.API
         private static IBluetoothManagedConnection connection;
 
         private static String actualLine;
-
+                  
         private static List<String> Replies = new List<String>();
 
         private static List<String> Request = new List<String>();
@@ -36,21 +36,8 @@ namespace BikeSensor.API
         public static void Init()
         {
             bluetoothAdapter = DependencyService.Resolve<IBluetoothAdapter>();
-            List<BluetoothDeviceModel> devices = bluetoothAdapter.BondedDevices.ToList();
-            connection = bluetoothAdapter.CreateManagedConnection(devices.FirstOrDefault(item => item.Name.Contains("BikeSensor")));
-            try
-            {
-                connection.Connect();
-            }
-            catch (BluetoothConnectionException)
-            {
-
-            }
-            catch (Exception)
-            {
-
-            }
-
+            Connect();
+            
             connection.OnRecived += OnReceived;
         }
 
@@ -63,7 +50,7 @@ namespace BikeSensor.API
 
         private static void OnReceived(object sender, RecivedEventArgs recivedEventArgs)
         {
-            String content = (Encoding.ASCII.GetString(recivedEventArgs.Buffer.ToArray()));
+            String content = Encoding.ASCII.GetString(recivedEventArgs.Buffer.ToArray());
             foreach(char c in content)
             {
                 if(c == '\n')
@@ -139,7 +126,7 @@ namespace BikeSensor.API
             bool ans = false;
             DateTime startTime = DateTime.Now;
             TimeSpan duration = (DateTime.Now - startRecording);
-            RecordModel.Duration = "Durée: " + duration.Hours.ToString() + "h " + duration.Minutes.ToString() + " min " + duration.Seconds.ToString() + "s";
+            RecordModel.Duration = duration;
 
             while (!ans)
             {
@@ -160,6 +147,31 @@ namespace BikeSensor.API
             Replies.RemoveAt(0);
 
             return Task.FromResult(token);
+        }
+
+        public static int RequestBattery()
+        {
+            SendCommand("battery/end\n");
+            bool ans = false;
+            DateTime startTime = DateTime.Now;
+            int battery = 0;
+
+            while (!ans)
+            {
+                TimeSpan timeSpan = new TimeSpan(0, 0, TIMEOUT);
+
+                if (DateTime.Now - startTime > timeSpan)
+                {
+                    ans = true;
+                }
+                if (Replies.Count > 0 && Replies[0] != null && Replies[0].Contains("battery/" ))
+                {
+                    battery = int.Parse(Replies[0].Split('/')[3]);
+                    ans = true;
+
+                }
+            }
+            return battery;
         }
 
         public static Task<RecordModel> RequestData(String token)
@@ -212,6 +224,11 @@ namespace BikeSensor.API
                                 startTime = DateTime.Now;
 
                             }
+                            else if (Replies[0] != null && Replies[0].Contains("error"))
+                            {
+                                RecordModel.Success = false;
+                                ended = true;
+                            }
                             else if (DateTime.Now - startTime > timeSpan)
                             {
                                 ended = true;
@@ -230,10 +247,50 @@ namespace BikeSensor.API
                     ans = true;
 
                 }
+                else if (Replies[0] != null && Replies[0].Contains("error"))
+                {
+                    ans = true;
+                    RecordModel.Success = false;
+
+
+                }
 
             }
+            
             RecordModel.MaxIntensityMean = SumMax / RecordModel.Datas.Count;
             return Task.FromResult(RecordModel);
+        }
+
+        public static void Disconnect()
+        {
+            if (IsConnected())
+                bluetoothAdapter.Disable();
+        }
+
+        public static void Connect()
+        {
+            if (!IsConnected())
+            {
+                if (!bluetoothAdapter.Enabled)
+                    bluetoothAdapter.Enable();
+
+                List<BluetoothDeviceModel> devices = bluetoothAdapter.BondedDevices.ToList();
+                connection = bluetoothAdapter.CreateManagedConnection(devices.FirstOrDefault(item => item.Name.Contains("BikeSensor")));
+                try
+                {
+                    connection.Connect();
+                }
+                catch (BluetoothConnectionException)
+                {
+
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            
+
         }
     }
 }

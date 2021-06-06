@@ -13,14 +13,36 @@ namespace BikeSensor.Views.Pages
     {
         private bool isRunning = false;
         private String token = "";
+        private DateTime startTime;
         public MainPage()
         {
             InitializeComponent();
         }
+        public async Task Timer()
+        {
+            DurationLb.Text = "00:00:00";
+
+            DurationLb.IsVisible = true;
+            while (isRunning)
+            {
+                DurationLb.Text = (DateTime.Now - startTime).ToString(@"hh\:mm\:ss");
+                await Task.Delay(1000);
+            }
+            DurationLb.IsVisible = false;
+            DurationLb.Text = "00:00:00";
+
+        }
 
         void TriggerBtn_Clicked(System.Object sender, System.EventArgs e)
         {
-            TriggerBtn.IsEnabled = false;
+            if (!BluetoothManager.IsConnected())
+            {
+                DisplayAlert("Attention!", "Veuillez vous connecter à l'appareil pour démarrer un enregistrement.", "Ok");
+                return;
+            }
+            ActivityIndicatorBtn.IsVisible = true;
+            TriggerBtn.IsVisible = false;
+
             if (isRunning)
             {
                 new Thread(new ThreadStart(async () =>
@@ -29,18 +51,29 @@ namespace BikeSensor.Views.Pages
                     RecordModel record = await BluetoothManager.RequestData(token);
                     if (record.Success)
                         Persistence.AddRecord(record);
+                    else
+                        MainThread.BeginInvokeOnMainThread(() =>
+                        {
+                            DisplayAlert("Erreur!", "L'envoi des données a échoué.", "Ok");
+                        });
                     MainThread.BeginInvokeOnMainThread(() =>
                     {
                         TriggerBtn.Text = "Démarrer";
-                        TriggerBtn.IsEnabled = true;
+                        TriggerBtn.IsVisible = true;
+                        ActivityIndicatorBtn.IsVisible = false;
+
                         TriggerBtn.BackgroundColor = (Color)Application.Current.Resources["MainGreen"];
                     });
                 })).Start();
+                isRunning = !isRunning;
 
 
             }
             else
             {
+                isRunning = !isRunning;
+                startTime = DateTime.Now;
+                Timer();
                 new System.Threading.Thread(new System.Threading.ThreadStart(async () =>
                 {
                     await BluetoothManager.StartRecording();
@@ -48,10 +81,10 @@ namespace BikeSensor.Views.Pages
                 })).Start();
                 TriggerBtn.Text = "Arrêter";
                 TriggerBtn.BackgroundColor = Color.Red;
-                TriggerBtn.IsEnabled = true;
+                TriggerBtn.IsVisible = true;
+                ActivityIndicatorBtn.IsVisible = false;
 
             }
-            isRunning = !isRunning;
         }
 
 

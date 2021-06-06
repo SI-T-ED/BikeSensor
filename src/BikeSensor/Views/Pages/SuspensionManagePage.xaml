@@ -57,7 +57,8 @@
                            CornerRadius="5">
                         <Image Source="BatteryIndicator.png"/>
                     </Frame>
-                    <Label Text="Batterie: 90%"
+                    <Label Text="Batterie: 00%"
+                           x:Name="BatteryLb"
                            FontSize="20"
                            FontFamily="RobotoBold"
                            TextColor="{x:DynamicResource TextGreen}"

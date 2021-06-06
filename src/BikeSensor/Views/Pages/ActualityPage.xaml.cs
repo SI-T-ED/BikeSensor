@@ -39,7 +39,6 @@ namespace BikeSensor.Views.Pages
             {
                 RecordModelsView.Add(new RecordModelView(item));
             }
-            RecordModelsView = RecordModelsView.OrderBy(o => o.Date).Reverse().ToList();
             ListView.ItemsSource = RecordModelsView;
             ListView.IsRefreshing = false;
         }

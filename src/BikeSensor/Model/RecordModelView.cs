@@ -27,5 +27,21 @@ namespace BikeSensor.Model
                 return "Intensité moyenne: " + MaxMeanPourcentage;
             }
         }
+
+        public string DurationText
+        {
+            get
+            {
+                return Duration.ToString(@"hh\:mm\:ss");
+            }
+        }
+
+        public string DurationMessage
+        {
+            get
+            {
+                return  "Durée: " + Duration.Hours.ToString() + "h " + Duration.Minutes.ToString() + " min " + Duration.Seconds.ToString() + "s";
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using BikeSensor.API;
 using Xamarin.Forms;
 
@@ -14,6 +15,12 @@ namespace BikeSensor.Views.Pages
            
         }
 
+        private Task GetBattery()
+        {
+            BatteryLb.Text = "Batterie: " + BluetoothManager.RequestBattery() + "%";
+            return Task.CompletedTask;
+        }
+
         protected override void OnAppearing()
         {
             if (BluetoothManager.IsConnected())
@@ -21,6 +28,7 @@ namespace BikeSensor.Views.Pages
                 ConnectedLayout.IsVisible = true;
                 DisconectedLayout.IsVisible = false;
                 SuspensionImage.Source = "SuspensionSelected.png";
+                GetBattery();
             }
             else
             {
@@ -29,6 +37,7 @@ namespace BikeSensor.Views.Pages
 
                 SuspensionImage.Source = "SuspensionNoSelected.png";
             }
+
         }
 
         void AddSuspensionBtn_Clicked(System.Object sender, System.EventArgs e)

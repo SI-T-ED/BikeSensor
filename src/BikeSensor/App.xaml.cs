@@ -17,16 +17,12 @@ namespace BikeSensor
     public partial class App : Application
     {
 
-        bool connected = false;
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage(new TabPage());
-            if(!connected)
-            {
-                MainPage.Navigation.PushAsync(new TabPage());
-            }
+           
         }
 
         protected override void OnStart()

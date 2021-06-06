@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace BikeSensor.Classes
@@ -33,6 +34,7 @@ namespace BikeSensor.Classes
                     Records = new List<RecordModel>();
                 }
             }
+            Records = Records.OrderBy(item => item.Date).Reverse().ToList();
         }
 
         private static void SaveRecord()
