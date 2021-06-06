@@ -63,15 +63,17 @@ namespace BikeSensor.API
                     {
                         requestMode = true;
                     }
-
-                    if (requestMode)
+                    if (actualLine.Contains("none"))
+                    {
+                        actualLine = "";
+                    }else if (requestMode)
                     {
                         Request.Add(actualLine);
                     }else
                     {
                         Replies.Add(actualLine);
                     }
-                    Debug.WriteLine(actualLine);
+                   
                     actualLine = "";
                 }
                 else
@@ -188,7 +190,7 @@ namespace BikeSensor.API
                 {
                     ans = true;
                 }
-                if (Replies.Count > 0 && Replies[0] != null && Replies[0].Contains("send/"+ token))
+                if (Replies != null && Replies.Count > 0 &&  Replies[0].Contains("send/"+ token))
                 {
                     Replies.RemoveAt(0);
                     bool ended = false;
@@ -217,17 +219,12 @@ namespace BikeSensor.API
                                 startTime = DateTime.Now;
 
                             }
-                            else if (Replies[0] != null && Replies[0].Contains("sended/" + token))
+                            else if (Replies != null && Replies[0].Contains("sended/" + token))
                             {
                                 ended = true;
                                 RecordModel.Success = true;
                                 startTime = DateTime.Now;
 
-                            }
-                            else if (Replies[0] != null && Replies[0].Contains("error"))
-                            {
-                                RecordModel.Success = false;
-                                ended = true;
                             }
                             else if (DateTime.Now - startTime > timeSpan)
                             {
@@ -247,10 +244,11 @@ namespace BikeSensor.API
                     ans = true;
 
                 }
-                else if (Replies[0] != null && Replies[0].Contains("error"))
+                else if (Replies != null && Replies.Count > 0 && Replies[0].Contains("error"))
                 {
                     ans = true;
                     RecordModel.Success = false;
+                    Replies.RemoveAt(0);
 
 
                 }

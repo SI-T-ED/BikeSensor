@@ -18,6 +18,7 @@ namespace BikeSensor.Classes
         }
         public static List<RecordModel> GetRecords()
         {
+            Records = Records.OrderBy(item => item.Date).Reverse().ToList();
             return Records;
         }
         public static void LoadRecords()
@@ -34,7 +35,6 @@ namespace BikeSensor.Classes
                     Records = new List<RecordModel>();
                 }
             }
-            Records = Records.OrderBy(item => item.Date).Reverse().ToList();
         }
 
         private static void SaveRecord()
