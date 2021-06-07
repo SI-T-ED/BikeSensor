@@ -33,10 +33,12 @@ namespace BikeSensor.Views.Pages
 
         }
 
+
         void TriggerBtn_Clicked(System.Object sender, System.EventArgs e)
         {
             if (!BluetoothManager.IsConnected())
             {
+                BluetoothManager.ConnectAsync();
                 DisplayAlert("Attention!", "Veuillez vous connecter à l'appareil pour démarrer un enregistrement.", "Ok");
                 return;
             }
@@ -48,14 +50,25 @@ namespace BikeSensor.Views.Pages
                 new Thread(new ThreadStart(async () =>
                 {
                     string token = await BluetoothManager.StopRecording();
-                    RecordModel record = await BluetoothManager.RequestData(token);
-                    if (record.Success)
-                        Persistence.AddRecord(record);
-                    else
+                    if(token == "TimeOut")
+                    {
                         MainThread.BeginInvokeOnMainThread(() =>
                         {
-                            DisplayAlert("Erreur!", "L'envoi des données a échoué.", "Ok");
+                            DisplayAlert("Erreur!", "L'envoi des données a échoué. TimeOut", "Ok");
                         });
+                    }
+                    else
+                    {
+                        RecordModel record = await BluetoothManager.RequestData(token);
+                        if (record.Success)
+                            Persistence.AddRecord(record);
+                        else
+                            MainThread.BeginInvokeOnMainThread(() =>
+                            {
+                                DisplayAlert("Erreur!", "L'envoi des données a échoué.", "Ok");
+                            });
+                    }
+                  
                     MainThread.BeginInvokeOnMainThread(() =>
                     {
                         TriggerBtn.Text = "Démarrer";

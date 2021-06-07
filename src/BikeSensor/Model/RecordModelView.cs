@@ -19,7 +19,13 @@ namespace BikeSensor.Model
                 return ((int)(((float)MaxIntensityMean / 120.0) * 100)).ToString() + "%";
             }
         }
-
+        public string MaxPourcentage
+        {
+            get
+            {
+                return ((int)(((float)MaxIntensity / 120.0) * 100)).ToString() + "%";
+            }
+        }
         public string MaxMeanText
         {
             get

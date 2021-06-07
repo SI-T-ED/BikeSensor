@@ -1,15 +1,17 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:content="clr-namespace:BikeSensor.Views.ContentViews"
-             x:Class="BikeSensor.Views.Pages.MainPage">
+             x:Class="BikeSensor.Views.Pages.MainPage"
+             BackgroundColor="White">
     <ContentPage.Content>
         <ScrollView>
             <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,20,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="0"/>
-                    <RowDefinition Height="220"/>
-                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="250"/>
+                    <!--RowDefinition Height="300"/-->
                 </Grid.RowDefinitions>
                 <StackLayout Spacing="0"
                              Grid.Row="0"
@@ -40,7 +42,7 @@
                        HasShadow="False"
                        Padding="15,10">
                     <content:ActivityGraphView/>
-                </Frame-->
+                </Frame>
                 <StackLayout Grid.Row="3"
                              Spacing="0"
                              Margin="30,35,30,30">
@@ -65,10 +67,13 @@
                     <content:RecordGraphView HorizontalOptions="FillAndExpand"
                                              VerticalOptions="FillAndExpand"/>
 
-                </StackLayout>
+                </StackLayout-->
                 <StackLayout Grid.Row="2"
                              Spacing="0"
+                             VerticalOptions="CenterAndExpand"
+                             HeightRequest="90"
                              Margin="30,30,30,0">
+                    
                     <Label Text="Démarrer un enregistrement"
                                FontSize="20"
                                FontFamily="RobotoBold"
@@ -77,6 +82,50 @@
                            Text="Pour démarrer appuyez sur le bouton ci-dessous."
                            FontFamily="RobotoRegular"
                            TextColor="{x:DynamicResource Key=TextGreen}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="3"
+                             Spacing="0"
+                             VerticalOptions="CenterAndExpand"
+                             Margin="30,0,30,0">
+                    <Label x:Name="DurationLb"
+                           Text="00:00:00"
+                           FontSize="46"
+                           FontFamily="RobotoBold"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           Margin="0,0,0,50"
+                           IsVisible="False"
+                           TextColor="{x:DynamicResource Key=TextGreen}"/>
+                    <StackLayout Spacing="0"
+                                 HorizontalOptions="FillAndExpand"
+                                 VerticalOptions="FillAndExpand">
+                       
+                        <ActivityIndicator x:Name="ActivityIndicatorBtn"
+                                           Color="{x:DynamicResource MainGreen}"
+                                           IsEnabled="True"
+                                           IsRunning="True"
+                                           IsVisible="False"
+                                           HeightRequest="42"
+                                           VerticalOptions="CenterAndExpand"
+                                           HorizontalOptions="CenterAndExpand"
+                                           WidthRequest="250"/>
+                        <Button  x:Name="TriggerBtn"
+                                 Text="Démarrer"
+                                 HeightRequest="42"
+                                 CornerRadius="18"
+                                 BackgroundColor="{x:DynamicResource MainGreen}"
+                                 TextColor="{x:DynamicResource White}"
+                                 FontFamily="RobotoBold"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="CenterAndExpand"
+                                 WidthRequest="250"
+                                 FontSize="18"
+                                 Clicked="TriggerBtn_Clicked"/>
+                    </StackLayout>
+                    
+                </StackLayout>
+
                     <!--Frame HasShadow="False"
                            CornerRadius="20"
                            HeightRequest="180"
@@ -111,37 +160,8 @@
                         </StackLayout>
 
                     </-->
-                    <Label x:Name="DurationLb"
-                           Text="00:00:00"
-                           FontSize="46"
-                           FontFamily="RobotoBold"
-                           HorizontalOptions="CenterAndExpand"
-                           VerticalOptions="Center"
-                           IsVisible="False"
-                           TextColor="{x:DynamicResource Key=TextGreen}"/>
-                    <ActivityIndicator x:Name="ActivityIndicatorBtn"
-                                       Color="{x:DynamicResource MainGreen}"
-                                       IsEnabled="True"
-                                       IsRunning="True"
-                                       IsVisible="False"
-                                       HeightRequest="42"
-                                       VerticalOptions="CenterAndExpand"
-                                       HorizontalOptions="CenterAndExpand"
-                                       WidthRequest="250"/>
-                    <Button  x:Name="TriggerBtn"
-                             Text="Démarrer"
-                             HeightRequest="42"
-                             CornerRadius="18"
-                             BackgroundColor="{x:DynamicResource MainGreen}"
-                             TextColor="{x:DynamicResource White}"
-                             FontFamily="RobotoBold"
-                             VerticalOptions="CenterAndExpand"
-                             HorizontalOptions="CenterAndExpand"
-                             WidthRequest="250"
-                             FontSize="18"
-                             Clicked="TriggerBtn_Clicked"
-                             />
-                </StackLayout>
+                     
+                    
             </Grid>
         </ScrollView>
     </ContentPage.Content>

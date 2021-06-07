@@ -15,6 +15,8 @@ namespace BikeSensor
 
         public int MaxIntensityMean { get; set; }
 
+        public int MaxIntensity { get; set; }
+
 
         public List<DataModel> Datas = new List<DataModel>();
 

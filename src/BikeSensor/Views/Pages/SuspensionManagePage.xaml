@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:content="clr-namespace:BikeSensor.Views.ContentViews"
              x:Class="BikeSensor.Views.Pages.SuspensionManagePage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"     >
     <ContentPage.Content>
         <StackLayout Spacing="0">
             <content:CustomNavigationBar TitleText="Votre suspension"

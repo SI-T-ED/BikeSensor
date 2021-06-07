@@ -20,13 +20,17 @@ namespace BikeSensor.Views.Pages
             InitializeComponent();
             modelView = recordModelView;
             GraphContent.RecordModel = recordModelView;
-            int max = (recordModelView.Datas.Count > 100) ? 100 : recordModelView.Datas.Count - 1;
-            GraphContent.LoadGraph(0, max);
             DateLb.Text = recordModelView.Date.ToShortDateString();
             DurationLb.Text = recordModelView.DurationText;
             MeanIntensityLb.Text = recordModelView.MaxMeanPourcentage;
+            _ = LoadGraph();
+        }
 
-            
+        private async Task LoadGraph()
+        {
+            await
+                Task.Delay(500);
+            _ = await GraphContent.LoadGraph(0, 100);
         }
 
         void BackBtn_Clicked(System.Object sender, System.EventArgs e)

@@ -20,15 +20,15 @@ namespace BikeSensor.Views.ContentViews
                 Entries = new List<ChartEntry>(),
                 LabelOrientation = Orientation.Horizontal,
                 ValueLabelOrientation = Orientation.Horizontal,
-                LabelColor = SKColor.Parse("000000"),
+                LabelColor = SKColor.Parse(((Color)Application.Current.Resources["White"]).ToHex()),
                 LabelTextSize = 36,
                 IsAnimated = false,
                 AnimationDuration = TimeSpan.Zero,
                 AnimationProgress = 1.0f,
-                LineMode = LineMode.Spline
+                LineMode = LineMode.Spline,
+                BackgroundColor = SKColor.Parse(((Color) Application.Current.Resources["White"]).ToHex())
 
             };
-            LoadGraph();
         }
 
         public Task<bool> LoadGraph(int from = 0, int to = 100)
@@ -39,17 +39,19 @@ namespace BikeSensor.Views.ContentViews
             {
                 entries.Add(new ChartEntry(RecordModel.Datas[i].Max)
                 {
-                    Label = i.ToString(),
+                    Label = RecordModel.Datas[i].Max.ToString(),
+                    ValueLabel = RecordModel.Datas[i].Max.ToString(),
                     Color = SKColor.Parse("#CBE9D4"),
                     TextColor = SKColor.Parse("#8ACF9E"),
-                    //ValueLabelColor = SKColor.Parse("#8ACF9E")
+                    ValueLabelColor = SKColor.Parse("#8ACF9E")
                 });
                 entries.Add(new ChartEntry(RecordModel.Datas[i].Min)
                 {
+                    Label = RecordModel.Datas[i].Min.ToString(),
+                    ValueLabel = RecordModel.Datas[i].Min.ToString(),
                     Color = SKColor.Parse("#CBE9D4"),
                     TextColor = SKColor.Parse("#8ACF9E"),
-                    ValueLabelColor = SKColor.Parse("#8ACF9E"),
-                    Label = RecordModel.Datas[i].Min.ToString(),
+                    ValueLabelColor = SKColor.Parse("#8ACF9E")
 
                 });
             }
@@ -57,9 +59,9 @@ namespace BikeSensor.Views.ContentViews
 
 
             charLine.Chart.Entries = entries;
-            
 
-            charLine.WidthRequest = 50 * (to- from);
+
+            charLine.WidthRequest =  50 * ( to- from);
 
             return Task.FromResult(true);
         }

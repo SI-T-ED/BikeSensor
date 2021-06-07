@@ -18,6 +18,13 @@ namespace BikeSensor.Classes
         }
         public static List<RecordModel> GetRecords()
         {
+            if (Records is null)
+            {
+                Records = new List<RecordModel>();
+                LoadRecords();
+            }
+            LoadRecords();
+
             Records = Records.OrderBy(item => item.Date).Reverse().ToList();
             return Records;
         }

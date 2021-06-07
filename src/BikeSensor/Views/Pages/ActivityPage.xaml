@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:content="clr-namespace:BikeSensor.Views.ContentViews"
              x:Class="BikeSensor.Views.Pages.ActivityPage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
     <ContentPage.Content>
         <ScrollView>
         <Grid ColumnSpacing="0"
@@ -88,7 +89,8 @@
                 <StackLayout Spacing="0"
                              HorizontalOptions="FillAndExpand"
                              Orientation="Vertical">
-                    <Label Text="100%"
+                    <Label x:Name="IntensityMaxLb"
+                           Text="100%"
                            FontSize="22"
                            FontFamily="RobotoBold"
                            HorizontalOptions="CenterAndExpand"

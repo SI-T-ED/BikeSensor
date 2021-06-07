@@ -12,6 +12,7 @@ namespace BikeSensor.API
 {
     public static class BluetoothManager
     {
+        #region Private
         private static IBluetoothAdapter bluetoothAdapter;
 
         private static IBluetoothManagedConnection connection;
@@ -31,6 +32,8 @@ namespace BikeSensor.API
         private static DateTime startRecording;
 
         private static int SumMax = 0;
+        #endregion
+
 
 
         public static void Init()
@@ -63,6 +66,7 @@ namespace BikeSensor.API
                     {
                         requestMode = true;
                     }
+                    Debug.WriteLine(actualLine);
                     if (actualLine.Contains("none"))
                     {
                         actualLine = "";
@@ -82,7 +86,7 @@ namespace BikeSensor.API
                 }
             }
         }
-        public static bool IsConnected()
+        public static bool IsConnected(bool isConnecting = false)
         {
             if(connection is null)
             {
@@ -92,6 +96,15 @@ namespace BikeSensor.API
             {
                 case ConnectionState.Connected:
                     return true;
+                case ConnectionState.Connecting:
+                    if (isConnecting)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 default:
                     return false;
             }
@@ -129,7 +142,7 @@ namespace BikeSensor.API
             DateTime startTime = DateTime.Now;
             TimeSpan duration = (DateTime.Now - startRecording);
             RecordModel.Duration = duration;
-
+            String token = "";
             while (!ans)
             {
                 TimeSpan timeSpan = new TimeSpan(0, 0, TIMEOUT);
@@ -140,13 +153,12 @@ namespace BikeSensor.API
                 else if (Replies.Count > 0 && Replies[0].Contains("stopped"))
                 {
                     ans = true;
-
+                    token = Replies[0].Split('/')[3];
+                    Replies.RemoveAt(0);
 
                 }
 
             }
-            String token = Replies[0].Split('/')[3];
-            Replies.RemoveAt(0);
 
             return Task.FromResult(token);
         }
@@ -169,6 +181,7 @@ namespace BikeSensor.API
                 if (Replies.Count > 0 && Replies[0] != null && Replies[0].Contains("battery/" ))
                 {
                     battery = int.Parse(Replies[0].Split('/')[3]);
+                    Replies.RemoveAt(0);
                     ans = true;
 
                 }
@@ -182,6 +195,7 @@ namespace BikeSensor.API
             bool ans = false;
             SumMax = 0;
             RecordModel.PartitionToken = token;
+            int min = 0; 
             DateTime startTime = DateTime.Now;
             while (!ans)
             {
@@ -206,20 +220,23 @@ namespace BikeSensor.API
                                 {
                
                                     DataModel data = new DataModel();
-                                    data.Id = Int32.Parse(parameters[0]);
-
-                                    data.Max = Int32.Parse(parameters[1]);
-                                    data.Min = Int32.Parse(parameters[2]);
+                                    data.Id = int.Parse(parameters[0]);
+                                    
+                                    data.Max = int.Parse(parameters[2]);
+                                    data.Min = int.Parse(parameters[1]);
+                                    if (data.Id == 0)
+                                        min = data.Min;
+                                    if (data.Min < min)
+                                        min = data.Min;
                                     data.Accurate = float.Parse(parameters[3], CultureInfo.InvariantCulture.NumberFormat);
                                     data.Decline = float.Parse(parameters[4], CultureInfo.InvariantCulture.NumberFormat);
-                                    SumMax += data.Max;
 
                                     RecordModel.Datas.Add(data);
                                 }
                                 startTime = DateTime.Now;
 
                             }
-                            else if (Replies != null && Replies[0].Contains("sended/" + token))
+                            else if (Replies != null && Replies[0] != null && Replies[0].Contains("sended/" + token))
                             {
                                 ended = true;
                                 RecordModel.Success = true;
@@ -255,7 +272,21 @@ namespace BikeSensor.API
 
             }
             
-            RecordModel.MaxIntensityMean = SumMax / RecordModel.Datas.Count;
+            for (int i = 0; i < RecordModel.Datas.Count; i++)
+            {
+                RecordModel.Datas[i].Min -= min;
+                RecordModel.Datas[i].Max -= min;
+                SumMax += RecordModel.Datas[i].Max;
+
+                if(RecordModel.Datas[i].Max > RecordModel.MaxIntensity)
+                {
+                    RecordModel.MaxIntensity = RecordModel.Datas[i].Max;
+                }
+                RecordModel.MaxIntensityMean = SumMax / RecordModel.Datas.Count;
+
+            }
+
+
             return Task.FromResult(RecordModel);
         }
 
@@ -288,6 +319,33 @@ namespace BikeSensor.API
                 }
             }
             
+
+        }
+
+        public static Task ConnectAsync()
+        {
+            if (!IsConnected(true))
+            {
+                if (!bluetoothAdapter.Enabled)
+                    bluetoothAdapter.Enable();
+
+                List<BluetoothDeviceModel> devices = bluetoothAdapter.BondedDevices.ToList();
+                connection = bluetoothAdapter.CreateManagedConnection(devices.FirstOrDefault(item => item.Name.Contains("BikeSensor")));
+                try
+                {
+                    connection.Connect();
+                }
+                catch (BluetoothConnectionException)
+                {
+
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+
+            return Task.CompletedTask;
 
         }
     }

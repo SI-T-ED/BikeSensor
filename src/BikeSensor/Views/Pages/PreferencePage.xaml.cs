@@ -30,14 +30,14 @@ namespace BikeSensor.Views.Pages
         }
         void DisconnectBtn_Clicked(System.Object sender, System.EventArgs e)
         {
-            if (BluetoothManager.IsConnected())
+            if (BluetoothManager.IsConnected(true))
             {
                 BluetoothManager.Disconnect();
 
             }
             else
             {
-                BluetoothManager.Connect();
+                BluetoothManager.ConnectAsync();
             }
             UpdateUI();
         }

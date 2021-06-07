@@ -13,23 +13,21 @@ namespace BikeSensor.Views.Pages
         public ActualityPage()
         {
             InitializeComponent();
-            Persistence.LoadRecords();
-            var RecordModels = Persistence.GetRecords();
-            RecordModelsView = new List<RecordModelView>();
-            foreach (var item in RecordModels)
-            {
-                RecordModelsView.Add(new RecordModelView(item));
-            }
-            RecordModelsView = RecordModelsView.OrderBy(o => o.Date).Reverse().ToList();
-            ListView.ItemsSource = RecordModelsView;
+            LoadList();
+
         }
-     
+
+        protected override void OnAppearing()
+        {
+            LoadList();
+        }
+
         protected override void OnDisappearing()
         {
             ListView.SelectedItem = null;
         }
 
-        void ListView_Refreshing(System.Object sender, System.EventArgs e)
+        private void LoadList()
         {
             ListView.IsRefreshing = true;
 
@@ -41,6 +39,11 @@ namespace BikeSensor.Views.Pages
             }
             ListView.ItemsSource = RecordModelsView;
             ListView.IsRefreshing = false;
+        }
+
+        void ListView_Refreshing(System.Object sender, System.EventArgs e)
+        {
+            LoadList();
         }
 
         void ListView_ItemTapped(System.Object sender, Xamarin.Forms.ItemTappedEventArgs e)

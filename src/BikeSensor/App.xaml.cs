@@ -27,12 +27,13 @@ namespace BikeSensor
 
         protected override void OnStart()
         {
-            Persistence.LoadRecords();
             BluetoothManager.Init();
+            Persistence.LoadRecords();
+
 
         }
 
- 
+
 
         protected override void OnResume()
         {
