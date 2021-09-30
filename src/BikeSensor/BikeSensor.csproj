@@ -24,7 +24,6 @@
     <Folder Include="Ressources\" />
     <Folder Include="Ressources\Fonts\" />
     <Folder Include="Views\ContentViews\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Model\" />
     <Folder Include="API\" />
     <Folder Include="Classes\" />
